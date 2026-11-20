@@ -1,16 +1,16 @@
-using UnityEngine;
 
+
+using UnityEngine;
+using UnityEngine.SceneManagement;
 public class IntroScene : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        Invoke("LoadScene", 2f);
     }
 
-    // Update is called once per frame
-    void Update()
+    void LoadScene()
     {
-        
+        SceneManager.LoadScene("SampleScene");
     }
 }
