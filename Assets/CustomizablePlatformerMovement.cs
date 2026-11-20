@@ -197,4 +197,13 @@ public class CustomizablePlatformerMovement : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Destroyable"))
+        {
+            Destroy(collision.gameObject); // destroys THIS object
+        }
+    }
+
+
 }
