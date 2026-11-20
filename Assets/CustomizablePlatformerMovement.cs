@@ -1,5 +1,8 @@
+using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
             /////////////// INFORMATION ///////////////
 // This script is intended to work on a GameObject with
@@ -25,6 +28,10 @@ public class CustomizablePlatformerMovement : MonoBehaviour
     [SerializeField] private Rigidbody2D rigidbody;
     [SerializeField] private CircleCollider2D groundCheckCollider;
     [SerializeField] private LayerMask groundLayer = ~0; // ~0 is referring to EVERY layer.
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private TMP_Text Death_Text;
+    [SerializeField] private AudioClip deathSound;
+    [SerializeField] private Collider2D Death_Collider;
     
     // Handle input
     public bool controlEnabled { get; set; } = true; // You can edit this variable from Unity Events
@@ -44,12 +51,17 @@ public class CustomizablePlatformerMovement : MonoBehaviour
         rigidbody = GetComponent<Rigidbody2D>();
         
         rigidbody.gravityScale = 0; // Set gravity scale to 0 so player won't "fall". We will apply our own gravity!
-
+        Death_Text.gameObject.SetActive(false);
         //animator = GetComponent<Animator>();
     }
     
     void Update()
     {
+        if (!controlEnabled)
+        {
+            rigidbody.linearVelocity = Vector2.zero;
+            return;
+        }
         //---Handle vertical velocity---
         
         isGrounded = IsGrounded();
@@ -172,6 +184,17 @@ public class CustomizablePlatformerMovement : MonoBehaviour
         {
             jumpReleased = true;
             jumpInput = false;
+        }
+    }
+
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Death")
+        {
+            Death_Text.gameObject.SetActive(true);
+            audioSource.clip = deathSound;
+            audioSource.Play();
+            Destroy(gameObject);
         }
     }
 }
