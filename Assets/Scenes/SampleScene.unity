@@ -6674,7 +6674,7 @@ MonoBehaviour:
   deathSound: {fileID: 8300000, guid: 10c66782913dd3f4dab405abd23fbd01, type: 3}
   Death_Collider: {fileID: 1299364729}
   spriteRenderer: {fileID: 1469361256}
-  animator: {fileID: 0}
+  animator: {fileID: 1469361259}
 --- !u!212 &1469361256
 SpriteRenderer:
   serializedVersion: 2
@@ -6806,7 +6806,7 @@ Animator:
   m_GameObject: {fileID: 1469361252}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a588a931361ed1141a27eacbc6901840, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -7381,7 +7381,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0

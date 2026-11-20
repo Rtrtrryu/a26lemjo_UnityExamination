@@ -41,7 +41,8 @@ public class CustomizablePlatformerMovement : MonoBehaviour
     private bool jumpReleased;
     private bool wasGrounded;
     private bool isGrounded;
-
+    private float idleTimer = 0f;
+    
     [Header("Graphics")]
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Animator animator;
@@ -49,7 +50,8 @@ public class CustomizablePlatformerMovement : MonoBehaviour
     void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
-        
+        if (animator == null)
+            animator = GetComponent<Animator>();
         rigidbody.gravityScale = 0; // Set gravity scale to 0 so player won't "fall". We will apply our own gravity!
         Death_Text.gameObject.SetActive(false);
         //animator = GetComponent<Animator>();
@@ -101,7 +103,31 @@ public class CustomizablePlatformerMovement : MonoBehaviour
         
         // Write movement animation code here. (Suggestion: send your current velocity into the Animator for both the x- and y-axis.)
         // animator.SetFloat("HorizontalMovement", moveInput.x)
-        
+        if (animator != null)
+        {
+            
+
+             bool isWalking = Mathf.Abs(moveInput.x) > 0.01f;
+
+            // Walking animation when moving
+            animator.SetBool("Walking", isWalking);
+
+            // Idle animation when standing still
+            animator.SetBool("Idle", !isWalking);
+
+            
+
+            if (isWalking || !isGrounded)
+            {
+                idleTimer = 0f;
+            }
+            else
+            {
+                idleTimer += Time.deltaTime;
+            }
+
+            animator.SetFloat("IdleTimer", idleTimer);
+        }
         // Flip sprite according to direction (if a sprite renderer has been assigned)
         if (spriteRenderer)
         {
@@ -110,8 +136,13 @@ public class CustomizablePlatformerMovement : MonoBehaviour
             else if (moveInput.x < -0.01f)
                 spriteRenderer.flipX = true;
         }
+        
     }
-
+    public void resetIdleTimer()
+    {
+        idleTimer = 0f;
+        animator.SetFloat("idealtimer", idleTimer);
+    }
     private bool IsGrounded()
     {
         // Is our groundCheckCollider touching the groundLayer? If so, return the value "true"
