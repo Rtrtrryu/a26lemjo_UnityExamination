@@ -1,0 +1,79 @@
+{
+    "version": 1,
+    "name": "LEMMYINPUT",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "eb6ae57d-c6f4-4cc8-86f3-e88e510ab9b0",
+            "actions": [
+                {
+                    "name": "Move",
+                    "type": "Button",
+                    "id": "f9a6195a-c04e-4a0a-8cc8-b04aceca4060",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "bb77cdd5-f548-4418-8b10-f79adc961287",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "307e2b69-3d9f-4f99-96e6-aa310e631cb2",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c8a6c594-b431-499d-aca3-136c9af5e7a6",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b018cb43-3718-4fbc-a7c5-1d9429706af7",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "976b9d06-e13f-4cc2-8c39-052ab3b2f4fd",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

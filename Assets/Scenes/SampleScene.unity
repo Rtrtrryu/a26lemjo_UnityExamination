@@ -708,7 +708,6 @@ GameObject:
   - component: {fileID: 1469361254}
   - component: {fileID: 1469361253}
   - component: {fileID: 1469361258}
-  - component: {fileID: 1469361259}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -758,6 +757,26 @@ MonoBehaviour:
     m_ActionId: f1ba0d36-48eb-4cd5-b651-1c94a6531f70
     m_ActionName: 'Player/Jump[/Keyboard/space]'
   - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1469361255}
+        m_TargetAssemblyTypeName: CustomizablePlatformerMovement, Assembly-CSharp
+        m_MethodName: OnMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ce817c52-375d-4fb0-9109-a5e8ca77dd47
+    m_ActionName: 'Player/Move[/Keyboard/a,/Keyboard/d]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 94f9163b-e8bd-460b-9c49-f7baa43ae199
+    m_ActionName: Player/New action
+  - m_PersistentCalls:
       m_Calls: []
     m_ActionId: c95b2375-e6d9-4b88-9c4c-c5e76515df4b
     m_ActionName: 'UI/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]'
@@ -805,22 +824,6 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 0a23bdfe-9575-446a-948b-2f2556dc3955
     m_ActionName: New action map/New action1
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1469361255}
-        m_TargetAssemblyTypeName: CustomizablePlatformerMovement, Assembly-CSharp
-        m_MethodName: OnJump
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: ce817c52-375d-4fb0-9109-a5e8ca77dd47
-    m_ActionName: 'Player/move[/Keyboard/a,/Keyboard/d]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
@@ -872,7 +875,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 4294967295
-  spriteRenderer: {fileID: 0}
+  spriteRenderer: {fileID: 1469361256}
   animator: {fileID: 0}
 --- !u!212 &1469361256
 SpriteRenderer:
@@ -995,19 +998,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1469361259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1469361252}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba2adae458657854db2a96c9c0ef5dc7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  moveSpeed: 5
 --- !u!1 &1489020397
 GameObject:
   m_ObjectHideFlags: 0
